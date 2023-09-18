@@ -188,9 +188,10 @@ export default function AddSpeciesDialog({ species }: { species: Species }) {
                     <FormControl>
                       {/* Using shadcn/ui form with number: https://github.com/shadcn-ui/ui/issues/421 */}
                       <Input
-                        value={species.total_population !== null ? String(species.total_population) : " "}
                         type="number"
+                        placeholder="300000"
                         {...field}
+                        value={field.value?.toString()}
                         onChange={(event) => field.onChange(+event.target.value)}
                       />
                     </FormControl>
